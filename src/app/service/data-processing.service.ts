@@ -51,8 +51,8 @@ export class DataProcessingService {
 	private router = inject(Router);
 
 	// The base URL for the backend API.
-	private host = "https://project-manager-backend-theta.vercel.app/api";
-	// private host = "http://localhost:9090/api";
+	// private host = "https://project-manager-backend-theta.vercel.app/api";
+	private host = "http://localhost:9090/api";
 
 	// Computes the current user's roles for the selected project.
 	private currentProjectRoles = computed(() => {
