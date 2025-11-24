@@ -1,35 +1,39 @@
 <div class="card module">
-    <!-- Main container for the module card -->
-    <div class="module-container">
-        <!-- Priority indicator bar, color changes based on priority -->
-        <div class="indicator " [class.expanded]="expanded()"></div>
-        <div class="module-inner-container">
-            <!-- Expand/collapse arrow icon -->
-            <span class="arrow-icon-container" (click)="expandWorkInside()">
-                <mat-icon class="arrow-icon">
-                    @if (!expanded()){keyboard_arrow_right} @else {keyboard_arrow_down}
-                </mat-icon>
-            </span>
+  <!-- Main container for the module card -->
+  <div class="module-container">
+    <!-- Priority indicator bar, color changes based on priority -->
+    <div class="indicator" [class.expanded]="expanded()"></div>
+    <div class="module-inner-container">
+      <!-- Expand/collapse arrow icon -->
+      <span class="arrow-icon-container" (click)="toggleExpand()">
+        <mat-icon class="arrow-icon">
+          @if (!expanded()){keyboard_arrow_right} @else {keyboard_arrow_down}
+        </mat-icon>
+      </span>
 
-            <!-- Nama module -->
-            <div (click)="openForm()" class="card-name">
-                <span>{{ moduleData.moduleName }}</span>
-            </div>
+      <!-- Nama module -->
+      <div (click)="openForm()" class="card-name">
+        <span>{{ moduleData.moduleName }}</span>
+      </div>
 
-            <!-- State -->
-            <div class="card-section">
-                <span class="section-label">State</span>
-                <div class="progress-bar-battery">
-                    @for (item of moduleData.workStateCountList; track $index) {
-                    <div class="progress-fill-battery state-{{ dataService.formatClassName(item.name) }}"
-                        [matTooltip]="getTooltip(item.name, item.count, item.percentage)"
-                        [style.width.%]="item.percentage"></div>
-                    }
-                </div>
-            </div>
+      <!-- State -->
+      <div class="card-section">
+        <span class="section-label">State</span>
+        <div class="progress-bar-battery">
+          @for (item of moduleData.workStateCountList; track $index) {
+          <div
+            class="progress-fill-battery state-{{
+              dataService.formatClassName(item.name)
+            }}"
+            [matTooltip]="getTooltip(item.name, item.count, item.percentage)"
+            [style.width.%]="item.percentage"
+          ></div>
+          }
+        </div>
+      </div>
 
-            <!-- Section: Priority with pop-up to change priority -->
-            <!-- <div class="card-section">
+      <!-- Section: Priority with pop-up to change priority -->
+      <!-- <div class="card-section">
                 <span class="section-label">Priority</span>
                 <div class="card-status priority-{{moduleData.priorityName}}">
                     <span (click)="priorityPop.toggleVisibility()">{{moduleData.priorityName}}</span>
@@ -40,7 +44,9 @@
                 </app-pop-up-change>
             </div> -->
 
-            <!-- Section: Period progress bar -->
+      <!-- Section: Period progress bar -->
+    </div>
+    <!-- Expandable container for work items related to this module -->
 
 
         </div>
@@ -59,3 +65,4 @@
             }
 
         </div>
+

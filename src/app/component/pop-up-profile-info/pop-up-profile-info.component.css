@@ -10,6 +10,23 @@
   text-align: center;
   animation: fadeIn 0.3s ease-in-out;
 }
+.profile-header {
+  display: flex;
+  align-items: center;    /* vertikal sejajar */
+  justify-content: center;/* center di container */
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.profile-header mat-icon {
+  font-size: 22px;  /* kecilin dikit supaya proporsional */
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* Animasi popup */
 @keyframes fadeIn {
@@ -43,6 +60,7 @@ p {
   margin: 4px 0;
   font-size: 0.95rem;
   color: #555;
+  text-align: center;
 }
 
 p strong {
@@ -65,6 +83,24 @@ button[mat-button] {
 button[mat-button]:hover {
   background: #111827;  
 }
+.logout-btn {
+  margin-top: 16px;
+  border-radius: 15px;
+  padding: 5px 20px;
+  font-weight: 500;
+  background: #ff6b6b;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* pastikan center */
+}
+
+.logout-btn:hover {
+  background: #111827;
+}
+
+
 
 
 

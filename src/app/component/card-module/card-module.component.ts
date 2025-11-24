@@ -1,3 +1,4 @@
+
 // src/app/components/card-module/card-module.component.ts
 import {
 	Component,
@@ -38,9 +39,10 @@ import { CardSubModuleComponent } from "../card-sub-module/card-sub-module.compo
 export class CardModuleComponent {
 	dataService = inject(DataProcessingService);
 	dialogService = inject(DialogService);
-	@Input() moduleData: ModuleData = {
+	@Input() moduleData: ModuleData = 
+  {
 		moduleId: 1,
-		moduleName: "Sample Module",
+		moduleName: "oke Module",
 		workStateCountList: [
 			{ id: 1, name: "NEW", count: 3, percentage: 0 },
 			{ id: 2, name: "ASSIGNED", count: 2, percentage: 0 },
@@ -89,10 +91,7 @@ export class CardModuleComponent {
 		return `${name} ${count}/${this.totalWork()} (${formattedPercentage}%)`;
 	}
 
-	expandWorkInside() {
-		this.expanded.set(!this.expanded());
-		console.log("Expand clicked:", this.expanded(), this.subModules());
-	}
+
 
 	refreshWorkList() {
 		// placeholder untuk implementasi API module works
@@ -108,8 +107,10 @@ export class CardModuleComponent {
 
 	toggleExpand() {
 		this.expanded.set(!this.expanded());
-
+		console.log("Toggle expand:", this.expanded());
 		// 🔹 load submodules hanya sekali saat pertama expand
+		console.log('t',this.expanded());
+			console.log("Toggle expand:", this.expanded());
 		if (this.expanded() && this.subModules().length === 0) {
 			this.loadSubModules();
 		}
@@ -117,6 +118,7 @@ export class CardModuleComponent {
 
 	private loadSubModules() {
 		this.loadingSubModules.set(true);
+		console.log("Loading submodules for module:", this.moduleData.moduleId);
 		this.dataService
 			.getProjectSubModulesByModule(this.moduleData.moduleId)
 			.subscribe({

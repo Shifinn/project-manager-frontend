@@ -155,6 +155,8 @@
 
 .container-submodules {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: max-height 0.3s ease;
 }
 
