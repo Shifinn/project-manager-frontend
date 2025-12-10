@@ -24,7 +24,8 @@
                     <!-- Progress bar segment for each work state -->
                     <div class="progress-fill-battery state-{{dataService.formatClassName(item.name)}}"
                         [matTooltip]="getTooltip(item.name,item.count,item.percentage)"
-                        [style.width.%]="item.percentage">{{getTooltip(item.name,item.count,item.percentage)}}
+                        [style.width.%]="item.percentage">
+                        <!-- {{getTooltip(item.name,item.count,item.percentage)}} -->
                     </div>
                     }
                 </div>
