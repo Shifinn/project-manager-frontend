@@ -87,6 +87,10 @@ After login, the application uses a shared workspace layout with a collapsible s
 
 The pages are loaded through Angular's router, and the workspace pages use the named `home` outlet.
 
+## Related repository
+
+[Project Manager Backend](https://github.com/Shifinn/project-manager-backend) provides the REST API used by this repo. The backend handles authentication, project data, work items, assignments, bugs, and the lookup data required by the frontend.
+
 ## Tech stack
 
 - Angular 19
